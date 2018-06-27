@@ -1,11 +1,11 @@
 {
   "name": "tiles-server",
-  "version": "0.0.1",
-  "description":
-    "Server used to fetch the tiles and send them to the front end",
+  "version": "1.0.0",
+  "description": "Minimalistic typescript nodejs boilerplate",
   "main": "server.ts",
-  "repository": "https://github.com/TheGreatCircle/tentacool.git",
-  "author": "The Great Circle",
+  "repository":
+    "https://github.com/a1r93/minimum-typescript-express-boilerplate.git",
+  "author": "Arnaud Rochez",
   "license": "MIT",
   "private": true,
   "scripts": {
