@@ -1,0 +1,60 @@
+{
+  "name": "tiles-server",
+  "version": "0.0.1",
+  "description":
+    "Server used to fetch the tiles and send them to the front end",
+  "main": "server.ts",
+  "repository": "https://github.com/TheGreatCircle/tentacool.git",
+  "author": "The Great Circle",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "lint": "lint-ts && lint-js",
+    "lint-js": "eslint app",
+    "lint-ts": "tslint --project tsconfig.json --config tslint.json",
+    "test":
+      "tsc ./tests/routing-test.ts & NODE_ENV=test mocha ./tests/routing-test.js",
+    "build": "webpack ./src/app.ts",
+    "start": "webpack ./src/app.ts && node bundle.js",
+    "webpack": "webpack ./src/app.ts --watch",
+    "nodemon": "nodemon bundle.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "dotenv": "^6.0.0",
+    "errorhandler": "^1.5.0",
+    "express": "^4.16.3",
+    "winston": "^2.2.0",
+    "winston-daily-rotate-file": "^3.2.3"
+  },
+  "devDependencies": {
+    "@types/body-parser": "^1.17.0",
+    "@types/errorhandler": "^0.0.32",
+    "@types/express": "^4.16.0",
+    "@types/node": "^10.3.6",
+    "@types/winston": "^2.3.7",
+    "awesome-typescript-loader": "^3.4.1",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-es2016": "^6.24.1",
+    "eslint": "^3.3.0",
+    "eslint-config-airbnb": "^10.0.1",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^1.13.0",
+    "eslint-plugin-jsx-a11y": "^2.1.0",
+    "eslint-plugin-react": "^6.0.0",
+    "json-loader": "^0.5.7",
+    "mocha": "^3.0.2",
+    "nodemon": "^1.10.2",
+    "prettier": "1.10.2",
+    "supertest": "^2.0.0",
+    "tslint": "^5.9.1",
+    "tslint-clean-code": "^0.2.3",
+    "typescript": "^2.6.2",
+    "typescript-require": "^0.2.9-1",
+    "webpack": "^3.10.0",
+    "webpack-node-externals": "^1.6.0"
+  }
+}
