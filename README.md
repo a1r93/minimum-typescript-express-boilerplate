@@ -15,3 +15,5 @@ yarn start
 ```
 
 then try to connect to http://localhost:8000, it should print Hello World!
+
+Note that the index file is the src/app.ts file and NOT the ./server.ts file which is juste used in order to call app.ts

@@ -9,9 +9,7 @@
   "private": true,
   "scripts": {
     "lint": "lint-ts && lint-js",
-    "lint-js": "eslint app",
     "lint-ts": "tslint --project tsconfig.json --config tslint.json",
-    "test": "tsc ./tests/routing-test.ts & NODE_ENV=test mocha ./tests/routing-test.js",
     "build": "webpack ./src/app.ts",
     "start": "webpack ./src/app.ts && node bundle.js",
     "webpack": "webpack ./src/app.ts --watch",
