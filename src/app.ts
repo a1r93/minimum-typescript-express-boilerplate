@@ -22,7 +22,7 @@ const logger = createLogger()
 /**
  * Default app route.
  */
-app.get("/", (req, res) => {
+app.get("/", (req: express.Request, res: express.Response) => {
   res.status(HttpStatus.Ok).send("Hello World")
 })
 
