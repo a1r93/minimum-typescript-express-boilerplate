@@ -6,12 +6,10 @@ Really minimalistic boilerplate with typescript setup for express server
 
 ```
 npm install
-npm start
 
 OR
 
 yarn
-yarn start
 ```
 
 Then add a file named .env and add the following keys:
@@ -24,6 +22,16 @@ your .env file should therefore look like follow:
 ```
 PORT=8000
 LOGS_PATH=/Users/myUser/projectName/logs
+```
+
+Then run the following command:
+
+```
+npm start
+
+OR
+
+yarn start
 ```
 
 then try to connect to http://localhost:8000, it should print Hello World!
