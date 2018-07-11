@@ -1,6 +1,6 @@
 # minimum-typescript-express-boilerplate
 
-Really minimalistic boilerplate for typescript setup for express server
+Really minimalistic boilerplate with typescript setup for express server
 
 ## To launch
 
