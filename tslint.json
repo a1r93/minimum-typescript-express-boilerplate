@@ -1,27 +1,6 @@
 {
-  "extends": ["tslint:recommended", "tslint-clean-code"],
-  "rules": {
-    "arrow-parens": false,
-    "await-promise": true,
-    "no-any": true,
-    "no-commented-out-code": true,
-    "no-inferrable-types": true,
-    "no-invalid-this": true,
-    "no-magic-numbers": true,
-    "no-namespace": [true, "allow-declarations"],
-    "no-non-null-assertion": true,
-    "no-null-keyword": true,
-    "no-parameter-reassignment": true,
-    "no-reference": true,
-    "no-unused-expression": true,
-    "no-unused-variable": true,
-    "no-unnecessary-callback-wrapper": true,
-    "only-arrow-functions": true,
-    "promise-function-async": true,
-    "return-undefined": true,
-    "semicolon": [true, "never"],
-    "trailing-comma": [true, { "multilines": "never", "singleline": "never" }],
-    "typedef": true,
-    "use-isnan": true
+  "extends": ["tslint:recommended", "tslint-config-prettier"],
+  "linterOptions": {
+    "exclude": ["config/**/*.js", "node_modules/**/*.ts"]
   }
 }

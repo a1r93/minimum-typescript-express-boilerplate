@@ -1,10 +1,9 @@
 import * as bodyParser from "body-parser"
-import dotenv from "dotenv"
 import * as errorHandler from "errorhandler"
 import * as express from "express"
-import { createLogger, HttpStatus, loadEnvironment } from "../utils"
+import { createLogger, HttpStatus, loadEnvironment } from "./utils"
 
-const DEFAULT_PORT = 3000
+const DEFAULT_PORT = 8000
 
 // Load environment variables from .env file
 loadEnvironment()
@@ -23,7 +22,7 @@ const logger = createLogger()
 /**
  * Default app route.
  */
-app.get("/", () => (req, res) => {
+app.get("/", (req, res) => {
   res.status(HttpStatus.Ok).send("Hello World")
 })
 

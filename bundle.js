@@ -74,7 +74,7 @@ var bodyParser = __webpack_require__(2);
 var errorHandler = __webpack_require__(3);
 var express = __webpack_require__(4);
 var utils_1 = __webpack_require__(5);
-var DEFAULT_PORT = 3000;
+var DEFAULT_PORT = 8000;
 // Load environment variables from .env file
 utils_1.loadEnvironment();
 // Create Express server
@@ -88,9 +88,9 @@ var logger = utils_1.createLogger();
 /**
  * Default app route.
  */
-app.get("/", function () { return function (req, res) {
+app.get("/", function (req, res) {
     res.status(utils_1.HttpStatus.Ok).send("Hello World");
-}; });
+});
 var server = app.listen(app.get("port"), function () {
     logger.info("  App is running at http://localhost:" + app.get("port") + " in " + app.get("env") + " mode");
     logger.info("  Press CTRL-C to stop\n");
@@ -162,10 +162,11 @@ var tsFormat = function () { return new Date().toLocaleTimeString(); };
  * @returns {winston.LoggerInstance} The logger.
  */
 exports.createLogger = function (logName) {
+    var logPath = process.env.LOGS_PATH || "";
     var fileTransport = logName
         ? new (__webpack_require__(9))({
             datePattern: "YYYY-MM-DD",
-            filename: path_1.join(process.env.LOGS_PATH, "%DATE%-" + logName + ".log"),
+            filename: path_1.join(logPath, "%DATE%-" + logName + ".log"),
             prepend: true,
             timestamp: tsFormat
         })

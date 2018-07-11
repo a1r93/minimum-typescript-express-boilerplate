@@ -16,10 +16,11 @@ const tsFormat = () => new Date().toLocaleTimeString()
  * @returns {winston.LoggerInstance} The logger.
  */
 export const createLogger = (logName?: string) => {
+  const logPath = process.env.LOGS_PATH || ""
   const fileTransport = logName
     ? new (require("winston-daily-rotate-file"))({
         datePattern: "YYYY-MM-DD",
-        filename: join(process.env.LOGS_PATH, `%DATE%-${logName}.log`),
+        filename: join(logPath, `%DATE%-${logName}.log`),
         prepend: true,
         timestamp: tsFormat
       })

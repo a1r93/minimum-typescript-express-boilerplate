@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "lib": ["es2015"],
+    "sourceMap": true,
+    "allowJs": true,
+    "rootDir": "src",
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "noUnusedLocals": true
+  },
+  "exclude": ["bundle.js", "bundle.js.map", "node_modules", "webpack.config.js"]
+}
