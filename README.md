@@ -19,7 +19,7 @@ Then add a file named .env and add the following keys:
 - PORT: the port number your server should run on
 - LOGS_PATH= the path to the log files generated with winston
 
-your .env file should therefor look like follow:
+your .env file should therefore look like follow:
 
 ```
 PORT=8000
