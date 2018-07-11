@@ -2,7 +2,7 @@
   "name": "tiles-server",
   "version": "1.0.0",
   "description": "Minimalistic typescript nodejs boilerplate",
-  "main": "server.ts",
+  "main": "src/app.ts",
   "repository": "https://github.com/a1r93/minimum-typescript-express-boilerplate.git",
   "author": "Arnaud Rochez",
   "license": "MIT",
