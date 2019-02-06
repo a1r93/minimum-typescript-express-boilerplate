@@ -2,7 +2,7 @@
 
 Really minimalistic boilerplate with typescript setup for express server
 
-## To launch
+## To launch
 
 ```
 npm install
