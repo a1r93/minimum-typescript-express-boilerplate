@@ -1,7 +1,7 @@
 import * as bodyParser from "body-parser"
 import * as errorHandler from "errorhandler"
 import * as express from "express"
-import { createLogger, HttpStatus, loadEnvironment } from "./utils"
+import { Logger, HttpStatus, loadEnvironment } from "./utils"
 
 const DEFAULT_PORT = 8000
 
@@ -17,7 +17,7 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(errorHandler())
 
-const logger = createLogger()
+const logger = new Logger()
 
 /**
  * Default app route.
