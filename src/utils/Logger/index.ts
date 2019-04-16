@@ -1,11 +1,15 @@
 import * as winston from "winston"
 import { createLogger } from "./create-logger"
 
-let loggerInstance: Logger
+interface ILoggerInstances {
+  [key: string]: Logger
+}
+
+const loggerInstances: ILoggerInstances = {}
 
 export class Logger {
-  logger: winston.LoggerInstance
-  messages: string[]
+  private logger: winston.LoggerInstance
+  private messages: string[]
 
   constructor(logName?: string) {
     this.logger = createLogger(logName)
@@ -56,26 +60,27 @@ export class Logger {
       ? `${error}\n${this.messages.join("\n\t- ")}`
       : `${this.messages.join("\n- ")}`
 
-    const level: Function = error ? this.logger.error : this.logger.info
+    const level: winston.LeveledLogMethod = error
+      ? this.logger.error
+      : this.logger.info
 
     level(message)
   }
 }
 
 /**
- * @brief use this function in order to use a single logger instance in the
- * entire app, if you want to use a logger by entity you should create a
- * Logger for each entity
+ * @brief use this function in order to get the logger of the entity
+ * you need.
  *
  * @param logName The name of the log file
  *
  * @returns the Logger instance
  */
-export const getLoggerInstance = (logName?: string) => {
-  if (loggerInstance) {
-    return loggerInstance
+export const getLoggerInstance = (logName: string) => {
+  if (logName && loggerInstances[logName]) {
+    return loggerInstances[logName]
   }
-  loggerInstance = new Logger(logName)
+  loggerInstances[logName] = new Logger(logName)
 
-  return loggerInstance
+  return loggerInstances[logName]
 }
