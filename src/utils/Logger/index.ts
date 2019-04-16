@@ -13,6 +13,7 @@ export class Logger {
 
   constructor(logName?: string) {
     this.logger = createLogger(logName)
+    this.messages = []
   }
 
   public debug(message: string) {
@@ -64,6 +65,8 @@ export class Logger {
       ? this.logger.error
       : this.logger.info
 
+    this.emptyStack()
+
     level(message)
   }
 }
@@ -77,7 +80,11 @@ export class Logger {
  * @returns the Logger instance
  */
 export const getLoggerInstance = (logName: string) => {
-  if (logName && loggerInstances[logName]) {
+  if (!logName) {
+    throw new Error("A logger instance requires the name of an entity")
+  }
+
+  if (loggerInstances[logName]) {
     return loggerInstances[logName]
   }
   loggerInstances[logName] = new Logger(logName)
